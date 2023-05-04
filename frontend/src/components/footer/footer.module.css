@@ -1,11 +1,11 @@
 footer {
-    width: 100%;
+    width: 90%;
     height: 400px;
-    margin-top: 5rem;
+    margin-top: 8em;
 }
 
 .wrapper {
-    width: 85%;
+    width: 100%;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -17,18 +17,20 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    margin-right: 100px;
 }
 
 .col>h2 {
     margin-bottom: 15px;
     justify-self: flex-start;
-    margin-left: -5px;
+    margin-right: 100px;
 }
 
 .col>p {
     max-width: 425px;
     color: #555;
     font-size: 15px;
+    /* margin-right: 50px; */
 }
 
 /* !!!!!!!! RESPONSIVE !!!!!!!! */
@@ -57,4 +59,15 @@ footer {
     .col>p {
         max-width: 325px;
     }
+}
+
+table{
+    text-align: center;
+    margin-left: 280px;
+}
+ul{
+    list-style: none;
+}
+.legal{
+    margin-top: 50px;
 }
