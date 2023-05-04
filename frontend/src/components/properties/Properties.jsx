@@ -8,6 +8,7 @@ import { useEffect } from 'react'
 import { continentToIdx } from '../../util/idxToContinent'
 import { request } from '../../util/fetchAPI'
 import PropertyCard from '../propertyCard/PropertyCard'
+// import {handleSearch, state} from 'react'
 
 const Properties = () => {
   const [allProperties, setAllProperties] = useState([])
@@ -70,14 +71,14 @@ const Properties = () => {
 
       if (
         property.type === options.type
-        && continent === Number(options.continent)
+        && continent === Number(options.location)
         && property.price >= minPrice && property.price <= maxPrice
       ) {
         return property
       }
     })
 
-    const queryStr = `type=${options.type}&continent=${options.continent}&priceRange=${options.priceRange}`
+    const queryStr = `type=${options.type}&location=${options.location}&priceRange=${options.priceRange}`
 
     navigate(`/properties?${queryStr}`, { replace: true })
     setFilteredProperties(prev => filteredProperties)
@@ -91,9 +92,10 @@ const Properties = () => {
         <div className={classes.options}>
           <select value={state?.type} name="type" onChange={handleState}>
             <option disabled>Select type</option>
-            <option value="beach">Beach</option>
-            <option value="mountain">Mountain</option>
-            <option value="village">Village</option>
+            <option value="plot">Plot</option>
+            <option value="house">House</option>
+            <option value="flat">Flat</option>
+            <option value="shop">Shop</option>
           </select>
           <select value={state?.priceRange} name="priceRange" onChange={handleState}>
             <option disabled>Select Price Range</option>
@@ -104,13 +106,13 @@ const Properties = () => {
             <option value="4">400,000-500,000</option>
           </select>
           <select value={state?.continent} name="continent" onChange={handleState}>
-            <option disabled>Select Continent</option>
-            <option value="0">Europe</option>
-            <option value="1">Asia</option>
-            <option value="2">Africa</option>
-            <option value="3">South America</option>
-            <option value="4">North America</option>
-            <option value="5">Oceania</option>
+            <option disabled>Select Location</option>
+            <option value="0">Kothrud</option>
+            <option value="1">Karvenagar</option>
+            <option value="2">Shivajinagar</option>
+            <option value="3">Kondhwa</option>
+            <option value="4">Katraj</option>
+            <option value="5">Wagholi</option>
           </select>
           <button className={classes.searchBtn}>
             <AiOutlineSearch className={classes.searchIcon} onClick={handleSearch} />

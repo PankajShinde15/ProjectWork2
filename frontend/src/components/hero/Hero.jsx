@@ -5,8 +5,8 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import classes from './hero.module.css'
 
 const Hero = () => {
-  const [type, setType] = useState("beach")
-  const [continent, setContinent] = useState("0")
+  const [type, setType] = useState("Plot")
+  const [location, setLocation] = useState("0")
   const [priceRange, setPriceRange] = useState("0")
   const navigate = useNavigate()
 
@@ -14,7 +14,7 @@ const Hero = () => {
 
   const handleSearch = () => {
     // navigating to properties
-    navigate(`/properties?type=${type}&continent=${continent}&priceRange=${priceRange}`)
+    navigate(`/properties?type=${type}&location=${location}&priceRange=${priceRange}`)
   }
 
   return (
@@ -25,9 +25,10 @@ const Hero = () => {
         <div className={classes.options}>
           <select onChange={(e) => setType(e.target.value)}>
             <option disabled>Select type</option>
-            <option value="beach">Beach</option>
-            <option value="mountain">Mountain</option>
-            <option value="village">Village</option>
+            <option value="plot">Plot</option>
+            <option value="house">House</option>
+            <option value="flat">Flat</option>
+            <option value="shop">Shop</option>
           </select>
           <select onChange={(e) => setPriceRange(e.target.value)}>
             <option disabled>Select Price Range</option>
@@ -37,14 +38,14 @@ const Hero = () => {
             <option value="3">300,000-400,000</option>
             <option value="4">400,000-500,000</option>
           </select>
-          <select onChange={(e) => setContinent(e.target.value)}>
-            <option disabled>Select Continent</option>
-            <option value="0">Europe</option>
-            <option value="1">Asia</option>
-            <option value="2">Africa</option>
-            <option value="3">South America</option>
-            <option value="4">North America</option>
-            <option value="5">Oceania</option>
+          <select onChange={(e) => setLocation(e.target.value)}>
+            <option disabled>Select location</option>
+            <option value="0">Kothrud</option>
+            <option value="1">Karvengar</option>
+            <option value="2">Katraj</option>
+            <option value="3">Kondhwa</option>
+            <option value="4">Wagholi</option>
+            <option value="5">Shivajinagar</option>
           </select>
           <AiOutlineSearch className={classes.searchIcon} onClick={handleSearch} />
         </div>

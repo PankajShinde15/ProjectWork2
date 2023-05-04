@@ -139,6 +139,7 @@
     height: 92.5vh;
     width: 35vw;
     border-radius: 20px;
+    overflow: auto;
 }
 
 .listPropertyWrapper>h2 {

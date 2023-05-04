@@ -9,6 +9,7 @@ import { BsHouseDoor } from 'react-icons/bs'
 import { logout } from '../../redux/authSlice'
 import { request } from '../../util/fetchAPI'
 import { useEffect } from 'react'
+import ContactForm from '../ContactUs/contactUs';
 
 const Navbar = () => {
   const [state, setState] = useState({})
@@ -20,7 +21,6 @@ const Navbar = () => {
   const { user, token } = useSelector((state) => state.auth)
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
   useEffect(() => {
     setState(prev => {
       return {...prev, continent: 'europe', type: 'beach'}
@@ -119,13 +119,13 @@ const Navbar = () => {
             Home
           </li>
           <li className={classes.listItem}>
-            About
+            About Us
           </li>
           <li className={classes.listItem}>
             Featured
           </li>
           <li className={classes.listItem}>
-            Contacts
+            Contact Us
           </li>
         </ul>
         <div className={classes.right}>
@@ -140,11 +140,9 @@ const Navbar = () => {
               {showModal && (
                 <div className={classes.userModal}>
                   <AiOutlineClose onClick={() => setShowModal(prev => !prev)} className={classes.userModalClose} />
-                  <span className={classes.logoutBtn} onClick={handleLogout}>Logout</span>
                   <Link  to={`/my-profile`} onClick={() => setShowModal(prev => !prev)} className={classes.myProfile}>My Profile</Link>
                   <Link onClick={() => setShowForm(true)} className={classes.list}>List your property</Link>
-                  <Link onClick={() => setShowModal(prev => !prev)} className={classes.yachtBtn} to={`/yachts`}>See yachts!</Link>
-                  <Link to={`/create-yacht`} onClick={() => setShowModal(prev => !prev)}>List your yacht</Link>
+                  <span className={classes.logoutBtn} onClick={handleLogout}>Logout</span>
                 </div>
               )}
             </>
@@ -161,19 +159,20 @@ const Navbar = () => {
               <input value={state?.title} type="text" placeholder='Title' name="title" onChange={handleState} />
               <select value={state?.type} required name='type' onChange={handleState}>
                  <option disabled>Select Type</option>
-                 <option value='beach'>Beach</option>
-                 <option value='village'>Village</option>
-                 <option value='mountain'>Mountan</option>
+                 <option value='plot'>Plot</option>
+                 <option value='house'>House</option>
+                 <option value='flat'>Flat</option>
+                 <option value='shop'>Shop</option>
               </select>
               <input value={state?.desc} type="text" placeholder='Desc' name="desc" onChange={handleState} />
               <select value={state?.continent} required name='continent' onChange={handleState}>
-                 <option disabled>Select Continent</option>
-                 <option value='Europe'>Europe</option>
-                 <option value='Asia'>Asia</option>
-                 <option value='South America'>South America</option>
-                 <option value='North America'>North America</option>
-                 <option value='Australia'>Australia</option>
-                 <option value='Africa'>Africa</option>
+                 <option disabled>Select location</option>
+                 <option value='Europe'>Kothrud</option>
+                 <option value='Asia'>Karvenagar</option>
+                 <option value='South America'>Shivajinagar</option>
+                 <option value='North America'>Katraj</option>
+                 <option value='Australia'>Kondhwa</option>
+                 <option value='Africa'>Wagholi</option>
               </select>
               <input value={state?.price} type="number" placeholder='Price' name="price" onChange={handleState} />
               <input value={state?.sqmeters} type="number" placeholder='Sq. meters' name="sqmeters" onChange={handleState} />
@@ -208,14 +207,14 @@ const Navbar = () => {
                   Home
                 </li>
                 <li className={classes.listItem}>
-                  About
+                  About Us
                 </li>
                 <li className={classes.listItem}>
                   Featured
                 </li>
-                <li className={classes.listItem}>
-                  Contacts
-                </li>
+                <button onClick={'/ContactForm'} className={classes.listItem}>
+                  Contact Us
+                </button>
               </ul>
               <div className={classes.right}>
                 {!user ?

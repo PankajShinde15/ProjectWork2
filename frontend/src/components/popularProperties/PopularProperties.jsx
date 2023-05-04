@@ -9,18 +9,20 @@ import { useEffect } from 'react'
 import { request } from '../../util/fetchAPI'
 
 const PopularProperties = () => {
-  const [beachProperties, setBeachProperties] = useState(0)
-  const [mountainProperties, setMountainProperties] = useState(0)
-  const [villageProperties, setVillageProperties] = useState(0)
+  const [Plot, setPlotProperties] = useState(0)
+  const [House, setHouseProperties] = useState(0)
+  const [Flat, setFlatProperties] = useState(0)
+  const [Shop, setShopProperties] = useState(0)
 
   useEffect(() => {
-    const fetchPropertiesNumber = async () => {
+    const fetchPropertiesNumber = async() => {
       try {
-        const data = await request('/property/find/types', 'GET')
+         const data = await request('/property/find/types', 'GET')
 
-        setBeachProperties(data.beach)
-        setMountainProperties(data.mountain)
-        setVillageProperties(data.village)
+         setPlotProperties(data.plot)
+         setHouseProperties(data.house)
+         setFlatProperties(data.flat)
+         setShopProperties(data.shop)
       } catch (error) {
         console.error(error)
       }
@@ -36,42 +38,25 @@ const PopularProperties = () => {
           <h2>Best type of properties for you</h2>
         </div>
         <div className={classes.properties}>
-          <Link to={`/properties?type=beach&continent=0&priceRange=1`} className={classes.property}>
-            <img src={img1} />
-            <div className={classes.quantity}>{beachProperties} properties</div>
-            <h5>Beach properties</h5>
+          <Link to={`/properties?type=plot&location=0&priceRange=1`} className={classes.property}  >
+            <img src={img1} alt="plot images"/>
+            <div className={classes.quantity}>{Plot} properties</div>
+            <h5>Plots</h5>
           </Link>
-          <Link to={`/properties?type=mountain&continent=1&priceRange=1`} className={classes.property}>
-            <img src={img2} />
-            <div className={classes.quantity}>{mountainProperties} properties</div>
-            <h5>Mountain properties</h5>
+          <Link to={`/properties?type=house&location=1&priceRange=1`} className={classes.property}>
+            <img src={img2} alt="house images"/>
+            <div className={classes.quantity}>{House} properties</div>
+            <h5>Houses</h5>
           </Link>
-          <Link to={`/properties?type=village&continent=2&priceRange=1`} className={classes.property}>
-            <img src={img3} />
-            <div className={classes.quantity}>{villageProperties} properties</div>
-            <h5>Village properties</h5>
+          <Link to={`/properties?type=flat&location=2&priceRange=1`} className={classes.property}>
+            <img src={img3} alt="flat images"/>
+            <div className={classes.quantity}>{Flat} properties</div>
+            <h5>Flats</h5>
           </Link>
-        </div>
-      </div>
-      <div className={classes.wrapper}>
-        <div className={classes.titles}>
-          <h2>Best type of properties for you</h2>
-        </div>
-        <div className={classes.properties}>
-          <Link to={`/properties?type=beach&continent=0&priceRange=1`} className={classes.property}>
-            <img src={img1} />
-            <div className={classes.quantity}>{beachProperties} properties</div>
-            <h5>Beach properties</h5>
-          </Link>
-          <Link to={`/properties?type=mountain&continent=1&priceRange=1`} className={classes.property}>
-            <img src={img2} />
-            <div className={classes.quantity}>{mountainProperties} properties</div>
-            <h5>Mountain properties</h5>
-          </Link>
-          <Link to={`/properties?type=village&continent=2&priceRange=1`} className={classes.property}>
-            <img src={img3} />
-            <div className={classes.quantity}>{villageProperties} properties</div>
-            <h5>Village properties</h5>
+          <Link to={`/properties?type=shop&location=3&priceRange=1`} className={classes.property}>
+            <img src={img3} alt="shop images"/>
+            <div className={classes.quantity}>{Shop} properties</div>
+            <h5>Shops</h5>
           </Link>
         </div>
       </div>

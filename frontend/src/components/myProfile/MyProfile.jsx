@@ -6,16 +6,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { request } from '../../util/fetchAPI'
 import person from '../../assets/person.jpg'
-import YachtCard from '../yachtCard/YachtCard'
 import classes from './myProfile.module.css'
 import { logout } from '../../redux/authSlice'
 
 const MyProfile = () => {
     const { user, token } = useSelector((state) => state.auth)
     const [listedProperties, setListedProperties] = useState([])
-    const [listedYachts, setListedYachts] = useState([])
     const [bookmarkedProperties, setBookmarkedProperties] = useState([])
-    const [bookmarkedYachts, setBookmarkedYachts] = useState([])
     const [activeBtn, setActiveBtn] = useState(0)
     const [deleteModal, setDeleteModal] = useState(false)
     const [error, setError] = useState(false)
@@ -36,22 +33,7 @@ const MyProfile = () => {
             }
         }
         fetchListedProperties()
-    }, [])
-
-    useEffect(() => {
-        const fetchListedYachts = async () => {
-            try {
-                const options = {
-                    Authorization: `Bearer ${token}`
-                }
-                const data = await request(`/yacht/find/my-yachts`, 'GET', options)
-                setListedYachts(data)
-            } catch (error) {
-                console.log(error)
-            }
-        }
-        fetchListedYachts()
-    }, [])
+    })
 
     useEffect(() => {
         const fetchBookmarkedProperties = async () => {
@@ -66,22 +48,8 @@ const MyProfile = () => {
             }
         }
         fetchBookmarkedProperties()
-    }, [])
+    })
 
-    useEffect(() => {
-        const fetchBookmarkedYachts = async () => {
-            try {
-                const options = {
-                    Authorization: `Bearer ${token}`
-                }
-                const data = await request(`/yacht/find/bookmarked-yachts`, 'GET', options)
-                setBookmarkedYachts(data)
-            } catch (error) {
-                console.log(error)
-            }
-        }
-        fetchBookmarkedYachts()
-    }, [])
 
     const handleDeleteProfile = async () => {
         try {
@@ -114,7 +82,7 @@ const MyProfile = () => {
                         )}
                         <button onClick={() => setDeleteModal(prev => !prev)} className={classes.deleteBtn}>Delete Profile</button>
                     </div>
-                    <img className={classes.userProfileImg} src={user?.profileImg ? `http://localhost:5000/images/${user?.profileImg}` : person} />
+                    <img className={classes.userProfileImg} src={user?.profileImg ? `http://localhost:5000/images/${user?.profileImg}` : person} alt="profileImg"/>
                     <div className={classes.userData}>
                         <h3>{user?.username}</h3>
                         <h4>{user?.email}</h4>
@@ -124,14 +92,8 @@ const MyProfile = () => {
                     <button className={`${classes.button} ${activeBtn === 0 && classes.active}`} onClick={() => setActiveBtn(prev => 0)}>
                         Listed properties
                     </button>
-                    <button className={`${classes.button} ${activeBtn === 1 && classes.active}`} onClick={() => setActiveBtn(prev => 1)}>
-                        Listed yachts
-                    </button>
                     <button className={`${classes.button} ${activeBtn === 2 && classes.active}`} onClick={() => setActiveBtn(prev => 2)}>
                         Bookmarked properties
-                    </button>
-                    <button className={`${classes.button} ${activeBtn === 3 && classes.active}`} onClick={() => setActiveBtn(prev => 3)}>
-                        Bookmarked yachts
                     </button>
                 </div>
                 <div className={classes.catalog}>
@@ -147,7 +109,7 @@ const MyProfile = () => {
                                         <div className={classes.details}>
                                             <div className={classes.priceAndOwner}>
                                                 <span className={classes.price}>$ {listedProperty.price}</span>
-                                                <img src={user?.profileImg ? `http://localhost:5000/images/${user?.profileImg}` : person} className={classes.owner} />
+                                                <img src={user?.profileImg ? `http://localhost:5000/images/${user?.profileImg}` : person} className={classes.owner} alt="profileImg" />
                                             </div>
                                             <div className={classes.moreDetails}>
                                                 <span>{listedProperty?.beds} <FaBed className={classes.icon} /></span>
@@ -162,18 +124,7 @@ const MyProfile = () => {
                             </div>
                         </>
                     )}
-                    {activeBtn === 1 && (
-                        <>
-                            {listedYachts?.length > 0 && <h2 className={classes.title}>Listed Yachts</h2>}
-                            {listedYachts?.length > 0 ? (
-                                <div className={classes.yachts}>
-                                    {listedYachts.map((yacht) => (
-                                        <YachtCard yacht={yacht} key={yacht._id} />
-                                    ))}
-                                </div>
-                            ) : <h2 className={classes.noListed}>You have no listed yachts</h2>}
-                        </>
-                    )}
+                    
                     {activeBtn === 2 && (
                         <>
                             {bookmarkedProperties?.length > 0 && <h2 className={classes.title}>Bookmarked Properties</h2>}
@@ -186,7 +137,7 @@ const MyProfile = () => {
                                         <div className={classes.details}>
                                             <div className={classes.priceAndOwner}>
                                                 <span className={classes.price}>$ {bookmarkedProperty.price}</span>
-                                                <img src={person} className={classes.owner} />
+                                                <img src={person} className={classes.owner} alt="owner"/>
                                             </div>
                                             <div className={classes.moreDetails}>
                                                 <span>{bookmarkedProperty?.beds} <FaBed className={classes.icon} /></span>
@@ -201,18 +152,7 @@ const MyProfile = () => {
                             </div>
                         </>
                     )}
-                    {activeBtn === 3 && (
-                        <>
-                            {bookmarkedYachts?.length > 0 && <h2 className={classes.title}>Bookmarked Yachts</h2>}
-                            {bookmarkedYachts?.length > 0 ? (
-                                <div className={classes.yachts}>
-                                    {bookmarkedYachts.map((yacht) => (
-                                        <YachtCard yacht={yacht} key={yacht._id} />
-                                    ))}
-                                </div>
-                            ) : <h2 className={classes.noListed}>You have no bookmarked yachts</h2>}
-                        </>
-                    )}
+                    
                 </div>
                 {error && (
                     <div className={classes.error}>
