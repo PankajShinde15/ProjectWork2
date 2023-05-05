@@ -1,7 +1,7 @@
 import Footer from './components/footer/Footer';
 import Hero from './components/hero/Hero';
 import Navbar from './components/navbar/Navbar';
-import Newsletter from './components/newsletter/Newsletter';
+import Testimonials from './components/Testimonials/Testimonials';
 import PopularProperties from './components/popularProperties/PopularProperties';
 import Signin from './components/signin/Signin';
 import Signup from './components/signup/Signup';
@@ -32,7 +32,7 @@ function App() {
             <Navbar />
             <Hero />
             <PopularProperties />
-            <Newsletter />
+            <Testimonials />
             <Footer />
           </>
         } />
@@ -54,21 +54,21 @@ function App() {
         <Route path='/yacht/:id' element={user ?
           <>
             <Navbar />
-          
+
             <Footer />
           </>
           : <Navigate to='/signin' />} />
         <Route path='/create-yacht' element={user ?
           <>
             <Navbar />
-            
+
             <Footer />
           </>
           : <Navigate to='/signin' />} />
         <Route path='/yacht-edit/:id' element={user ?
           <>
             <Navbar />
-           
+
             <Footer />
           </>
           : <Navigate to='/signin' />} />
