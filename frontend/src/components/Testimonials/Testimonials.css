@@ -1,41 +1,44 @@
 .testimonials {
   margin: 50px auto;
-  max-width: 100vw;
+  max-width: 70vw;
   position: relative;
+  background-color: bisque;
+  max-height: 350px;
+  /* Added max-height property */
+  overflow: hidden;
+  /* Added overflow property */
 }
-h1{
+
+h1 {
+  padding: 15px 0;
   text-align: center;
-  margin: 20px 0 50px 0;
 }
+
 .testimonials .slick-slide {
-  margin: 0 10px;
+  align-items: center;
 }
 
 .testimonials .slick-slide img {
   display: block;
-  height: auto;
   margin: 0 auto;
-  max-width: 150px;
-  border-radius: 40%;
-  border: 3px solid #fff;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .testimonials .slick-arrow {
-  background-color: #000;
+  /* background-color: lightblue; */
   border: none;
   border-radius: 50%;
-  color: #fff;
   cursor: pointer;
-  font-size: 20px;
   height: 40px;
   line-height: 40px;
-  opacity: 0.5;
   position: absolute;
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
-  width: 40px;
-  z-index: 1;
+  width: 50px;
+  z-index: 0;
 }
 
 .testimonials .slick-arrow:hover {
@@ -52,6 +55,8 @@ h1{
 
 .testimonials .testimonial-item {
   text-align: center;
+  height: 350px;
+  /* Added height property */
 }
 
 .testimonials .testimonial-text {

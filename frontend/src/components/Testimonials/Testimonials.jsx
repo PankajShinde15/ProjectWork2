@@ -11,6 +11,9 @@ const Testimonials = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000, // Set autoplay speed to 5000ms (5 seconds)
+  
   };
 
   return (
