@@ -67,11 +67,11 @@ const Properties = () => {
       const priceRange = arrPriceRanges[options.priceRange]
       const minPrice = Number(priceRange.split('-')[0])
       const maxPrice = Number(priceRange.split('-')[1])
-      const continent = continentToIdx(property.continent)
+      const location = continentToIdx(property.location)
 
       if (
         property.type === options.type
-        && continent === Number(options.location)
+        && location === Number(options.location)
         && property.price >= minPrice && property.price <= maxPrice
       ) {
         return property

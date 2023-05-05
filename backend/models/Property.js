@@ -13,7 +13,7 @@ const PropertySchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        enum: ["beach", "mountain", "village"],
+        enum: ["plot", "house", "flats","shop"],
         required: true
     },
     desc: {
@@ -34,7 +34,7 @@ const PropertySchema = new mongoose.Schema({
         required: true,
         min: 15
     },
-    continent: {
+    location: {
         type: String,
         required: true
     },

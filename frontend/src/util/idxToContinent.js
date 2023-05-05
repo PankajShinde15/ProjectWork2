@@ -1,10 +1,10 @@
 export const arrContinent = [
-    'europe',
-    'asia',
-    'africa',
-    'south america',
-    'north america',
-    'oceania'
+    'kothrud',
+    'karvenagar',
+    'katraj',
+    'kondhwa',
+    'wagholi',
+    'shivajinagar'
 ]
 
 export const continentToIdx = (continent) => {

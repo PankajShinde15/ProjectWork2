@@ -5,7 +5,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import classes from './hero.module.css'
 
 const Hero = () => {
-  const [type, setType] = useState("Plot")
+  const [type, setType] = useState("plot")
   const [location, setLocation] = useState("0")
   const [priceRange, setPriceRange] = useState("0")
   const navigate = useNavigate()
@@ -41,7 +41,7 @@ const Hero = () => {
           <select onChange={(e) => setLocation(e.target.value)}>
             <option disabled>Select location</option>
             <option value="0">Kothrud</option>
-            <option value="1">Karvengar</option>
+            <option value="1">Karvenagar</option>
             <option value="2">Katraj</option>
             <option value="3">Kondhwa</option>
             <option value="4">Wagholi</option>

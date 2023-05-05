@@ -9,7 +9,7 @@ import { BsHouseDoor } from 'react-icons/bs'
 import { logout } from '../../redux/authSlice'
 import { request } from '../../util/fetchAPI'
 import { useEffect } from 'react'
-import ContactForm from '../ContactUs/contactUs';
+
 
 const Navbar = () => {
   const [state, setState] = useState({})
@@ -23,7 +23,7 @@ const Navbar = () => {
   const navigate = useNavigate()
   useEffect(() => {
     setState(prev => {
-      return {...prev, continent: 'europe', type: 'beach'}
+      return {...prev, location: 'kothrud', type: 'plot'}
     })
   }, [])
 
@@ -165,7 +165,7 @@ const Navbar = () => {
                  <option value='shop'>Shop</option>
               </select>
               <input value={state?.desc} type="text" placeholder='Desc' name="desc" onChange={handleState} />
-              <select value={state?.continent} required name='continent' onChange={handleState}>
+              <select value={state?.location} required name='continent' onChange={handleState}>
                  <option disabled>Select location</option>
                  <option value='Europe'>Kothrud</option>
                  <option value='Asia'>Karvenagar</option>

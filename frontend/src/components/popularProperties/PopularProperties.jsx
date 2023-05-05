@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import classes from './popularProperties.module.css'
-import img1 from '../../assets/realestatebeach.jpg'
-import img2 from '../../assets/realestatemountain.jpg'
-import img3 from '../../assets/realestatecountryside.jpg'
+import img1 from '../../assets/plot_img.jpg'
+import img3 from '../../assets/flats_img.jpg'
+import img4 from '../../assets/shop.jpg'
+import img2 from '../../assets/realestatecountryside.jpg'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { request } from '../../util/fetchAPI'
@@ -56,7 +57,7 @@ const PopularProperties = () => {
             <h5>Flats</h5>
           </Link>
           <Link to={`/properties?type=shop&location=3&priceRange=1`} className={classes.property}>
-            <img src={img3} alt="shop images"/>
+            <img src={img4} alt="shop images"/>
             <div className={classes.quantity}>{Shop} properties</div>
             <h5>Shops</h5>
           </Link>
@@ -84,7 +85,7 @@ const PopularProperties = () => {
             {/* <h5></h5> */}
           </Link>
           <Link to={`/properties?type=shop&location=3&priceRange=1`} className={classes.property}>
-            <img src={img3} alt="shop images"/>
+            <img src={img4} alt="shop images"/>
             <div className={classes.quantity}>{Shop} properties</div>
             {/* <h5></h5> */}
           </Link>
@@ -112,7 +113,7 @@ const PopularProperties = () => {
             {/* <h5>Flats</h5> */}
           </Link>
           <Link to={`/properties?type=shop&location=3&priceRange=1`} className={classes.property}>
-            <img src={img3} alt="shop images"/>
+            <img src={img4} alt="shop images"/>
             <div className={classes.quantity}>{Shop} properties</div>
             {/* <h5>Shops</h5> */}
           </Link>
@@ -140,7 +141,7 @@ const PopularProperties = () => {
             {/* <h5>Flats</h5> */}
           </Link>
           <Link to={`/properties?type=shop&location=3&priceRange=1`} className={classes.property}>
-            <img src={img3} alt="shop images"/>
+            <img src={img4} alt="shop images"/>
             <div className={classes.quantity}>{Shop} properties</div>
             {/* <h5>Shops</h5> */}
           </Link>
@@ -168,7 +169,7 @@ const PopularProperties = () => {
             {/* <h5></h5> */}
           </Link>
           <Link to={`/properties?type=shop&location=3&priceRange=1`} className={classes.property}>
-            <img src={img3} alt="shop images"/>
+            <img src={img4} alt="shop images"/>
             <div className={classes.quantity}>{Shop} properties</div>
             {/* <h5></h5> */}
           </Link>
