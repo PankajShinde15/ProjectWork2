@@ -154,12 +154,11 @@ propertyController.put('/bookmark/:id', verifyToken, async (req, res) => {
 // delete estate
 propertyController.delete('/:id', verifyToken, async (req, res) => {
     try {
-        const property = await Property.findById(req.params.id)
-        if (property.currentOwner.toString() !== req.user.id) {
-            throw new Error("You are not allowed to delete other people properties")
+        
+        const result = await Property.findByIdAndDelete(req.params.id);
+        if (!result) {
+        return res.status(404).send('Data not found');
         }
-
-        await property.delete()
 
         return res.status(200).json({ msg: "Successfully deleted property" })
     } catch (error) {
