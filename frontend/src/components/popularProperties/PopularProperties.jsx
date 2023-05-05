@@ -32,6 +32,8 @@ const PopularProperties = () => {
 
   return (
     <div className={classes.container}>
+
+
       <div className={classes.wrapper}>
         <div className={classes.titles}>
           <h5>Different types of properties</h5>
@@ -60,6 +62,119 @@ const PopularProperties = () => {
           </Link>
         </div>
       </div>
+
+      <div className={classes.wrapper}>
+        <div className={classes.titles}>
+          <h2>Featured Plot properties for you</h2>
+        </div>
+        <div className={classes.properties}>
+          <Link to={`/properties?type=plot&location=0&priceRange=1`} className={classes.property}  >
+            <img src={img1} alt="plot images"/>
+            <div className={classes.quantity}>{Plot} properties</div>
+            {/* <h5></h5> */}
+          </Link>
+          <Link to={`/properties?type=house&location=1&priceRange=1`} className={classes.property}>
+            <img src={img2} alt="house images"/>
+            <div className={classes.quantity}>{House} properties</div>
+            {/* <h5></h5> */}
+          </Link>
+          <Link to={`/properties?type=flat&location=2&priceRange=1`} className={classes.property}>
+            <img src={img3} alt="flat images"/>
+            <div className={classes.quantity}>{Flat} properties</div>
+            {/* <h5></h5> */}
+          </Link>
+          <Link to={`/properties?type=shop&location=3&priceRange=1`} className={classes.property}>
+            <img src={img3} alt="shop images"/>
+            <div className={classes.quantity}>{Shop} properties</div>
+            {/* <h5></h5> */}
+          </Link>
+        </div>
+      </div>
+
+      <div className={classes.wrapper}>
+        <div className={classes.titles}>
+          <h2>Featured Flat properties for you</h2>
+        </div>
+        <div className={classes.properties}>
+          <Link to={`/properties?type=plot&location=0&priceRange=1`} className={classes.property}  >
+            <img src={img1} alt="plot images"/>
+            <div className={classes.quantity}>{Plot} properties</div>
+            {/* <h5>Plots</h5> */}
+          </Link>
+          <Link to={`/properties?type=house&location=1&priceRange=1`} className={classes.property}>
+            <img src={img2} alt="house images"/>
+            <div className={classes.quantity}>{House} properties</div>
+            {/* <h5>Houses</h5> */}
+          </Link>
+          <Link to={`/properties?type=flat&location=2&priceRange=1`} className={classes.property}>
+            <img src={img3} alt="flat images"/>
+            <div className={classes.quantity}>{Flat} properties</div>
+            {/* <h5>Flats</h5> */}
+          </Link>
+          <Link to={`/properties?type=shop&location=3&priceRange=1`} className={classes.property}>
+            <img src={img3} alt="shop images"/>
+            <div className={classes.quantity}>{Shop} properties</div>
+            {/* <h5>Shops</h5> */}
+          </Link>
+        </div>
+      </div>
+      
+      <div className={classes.wrapper}>
+        <div className={classes.titles}>
+          <h2>Featured House properties for you</h2>
+        </div>
+        <div className={classes.properties}>
+          <Link to={`/properties?type=plot&location=0&priceRange=1`} className={classes.property}  >
+            <img src={img1} alt="plot images"/>
+            <div className={classes.quantity}>{Plot} properties</div>
+            {/* <h5>Plots</h5> */}
+          </Link>
+          <Link to={`/properties?type=house&location=1&priceRange=1`} className={classes.property}>
+            <img src={img2} alt="house images"/>
+            <div className={classes.quantity}>{House} properties</div>
+            {/* <h5>Houses</h5> */}
+          </Link>
+          <Link to={`/properties?type=flat&location=2&priceRange=1`} className={classes.property}>
+            <img src={img3} alt="flat images"/>
+            <div className={classes.quantity}>{Flat} properties</div>
+            {/* <h5>Flats</h5> */}
+          </Link>
+          <Link to={`/properties?type=shop&location=3&priceRange=1`} className={classes.property}>
+            <img src={img3} alt="shop images"/>
+            <div className={classes.quantity}>{Shop} properties</div>
+            {/* <h5>Shops</h5> */}
+          </Link>
+        </div>
+      </div>
+
+      <div className={classes.wrapper}>
+        <div className={classes.titles}>
+          <h2>Featured Shop properties for you</h2>
+        </div>
+        <div className={classes.properties}>
+          <Link to={`/properties?type=plot&location=0&priceRange=1`} className={classes.property}  >
+            <img src={img1} alt="plot images"/>
+            <div className={classes.quantity}>{Plot} properties</div>
+            {/* <h5></h5> */}
+          </Link>
+          <Link to={`/properties?type=house&location=1&priceRange=1`} className={classes.property}>
+            <img src={img2} alt="house images"/>
+            <div className={classes.quantity}>{House} properties</div>
+            {/* <h5></h5> */}
+          </Link>
+          <Link to={`/properties?type=flat&location=2&priceRange=1`} className={classes.property}>
+            <img src={img3} alt="flat images"/>
+            <div className={classes.quantity}>{Flat} properties</div>
+            {/* <h5></h5> */}
+          </Link>
+          <Link to={`/properties?type=shop&location=3&priceRange=1`} className={classes.property}>
+            <img src={img3} alt="shop images"/>
+            <div className={classes.quantity}>{Shop} properties</div>
+            {/* <h5></h5> */}
+          </Link>
+        </div>
+      </div>
+
     </div>
   )
 }

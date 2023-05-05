@@ -10,6 +10,7 @@
   height: 100%;
   margin: 0 auto;
   margin-left:100px;
+  margin-top: 20px;
 }
 
 .titles {
@@ -17,6 +18,7 @@
   align-items: center;
   flex-direction: column;
   gap: 0.5rem;
+  margin-top: 20px;
 }
 
 .titles>h5 {
@@ -48,6 +50,7 @@
   -moz-box-shadow: -5px 5px 19px -5px rgba(0, 0, 0, 0.3);
   text-decoration: none;
   transition: 150ms all;
+  height:265px;
 }
 
 .property:hover {
