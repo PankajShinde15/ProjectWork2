@@ -32,7 +32,6 @@ const Hero = () => {
           </select>
           <select onChange={(e) => setPriceRange(e.target.value)}>
             <option disabled>Select Price Range</option>
-            <option value="0">0-100,000</option>
             <option value="1">100,000-200,000</option>
             <option value="2">200,000-300,000</option>
             <option value="3">300,000-400,000</option>
