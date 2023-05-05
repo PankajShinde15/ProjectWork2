@@ -58,20 +58,20 @@ const PropertyDetail = () => {
     setDesc('')
   }
 
-  const handleContactOwner = async (e) => {
-    e.preventDefault()
+  // const handleContactOwner = async (e) => {
+  //   e.preventDefault()
 
-    emailjs.sendForm("service_mjoebse", "template_w5mthmm", formRef.current, '5T3Wb_hkHjKTOJDYQ')
-      .then((result) => {
-        handleCloseForm()
-        setSuccess(true)
-        setTimeout(() => {
-          setSuccess(false)
-        }, 2500)
-      }, (error) => {
-        console.log(error.text);
-      });
-  }
+  //   emailjs.sendForm("service_mjoebse", "template_w5mthmm", formRef.current, '5T3Wb_hkHjKTOJDYQ')
+  //     .then((result) => {
+  //       handleCloseForm()
+  //       setSuccess(true)
+  //       setTimeout(() => {
+  //         setSuccess(false)
+  //       }, 2500)
+  //     }, (error) => {
+  //       console.log(error.text);
+  //     });
+  // }
 
   const handleDelete = async () => {
     try {
@@ -139,7 +139,7 @@ const PropertyDetail = () => {
           <div className={classes.details}>
             <div className={classes.typeAndContinent}>
               <div>Type: <span>{`${propertyDetail?.type}`}</span></div>
-              <div>Continent: <span>{`${propertyDetail?.continent}`}</span></div>
+              <div>Location: <span>{`${propertyDetail?.location}`}</span></div>
             </div>
             <div className={classes.priceAndOwner}>
               <span className={classes.price}><span>Price: $ </span>{`${propertyDetail?.price}`}</span>
@@ -183,27 +183,7 @@ const PropertyDetail = () => {
           }
         </div>
       </div>
-      {
-        showForm &&
-        <div className={classes.contactForm} onClick={handleCloseForm}>
-          <div className={classes.contactFormWrapper} onClick={(e) => e.stopPropagation()}>
-            <h2>Send Email To Owner</h2>
-            <form onSubmit={handleContactOwner} ref={formRef}>
-              <input value={user?.email} type="text" placeholder='My email' name="from_email" />
-              <input value={user?.username} type="text" placeholder='My username' name="from_username" />
-              <input value={propertyDetail?.currentOwner?.email} type="email" placeholder='Owner email' name="to_email" />
-              <input value={desc} type="text" placeholder='Desc' name="message" onChange={(e) => setDesc(e.target.value)} />
-              <button>Send</button>
-            </form>
-            <AiOutlineClose onClick={handleCloseForm} className={classes.removeIcon} />
-          </div>
-        </div>
-      }
-      {success && (
-        <div className={classes.success}>
-          You've successfully contacted the owner of the yacht!
-        </div>
-      )}
+      
       {shortComment && (
         <div>
           <div className={classes.error}>
