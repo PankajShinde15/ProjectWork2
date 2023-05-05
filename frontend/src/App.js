@@ -15,6 +15,10 @@ import MyProfile from './components/myProfile/MyProfile';
 import UpdateProfile from './components/updateProfile/UpdateProfile';
 import './App.css';
 import NotFound from './components/notFound/NotFound';
+import Contact from './components/ContactUs/contactUs';
+import About from './components/AboutUs/About';
+import Listings from './components/AllListings/Listings';
+
 
 function App() {
   const { user } = useSelector((state) => state.auth)
@@ -110,6 +114,27 @@ function App() {
           <>
             <Navbar />
             <NotFound />
+            <Footer />
+          </>
+        } />
+        <Route path='/contact' element={
+          <>
+            <Navbar />
+            <Contact />
+            <Footer />
+          </>
+        } />
+        <Route path='/about' element={
+          <>
+            <Navbar />
+            <About />
+            <Footer />
+          </>
+        } />
+        <Route path='/listings' element={
+          <>
+            <Navbar />
+            <Listings />
             <Footer />
           </>
         } />

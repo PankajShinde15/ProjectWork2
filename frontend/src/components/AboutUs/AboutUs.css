@@ -1,0 +1,43 @@
+.about-us {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+footer,h2 {
+    text-align: center;
+    padding: 3rem;
+  }
+  
+  .team-member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .team-member img {
+    margin-right: 20px;
+  }
+  
+  .team-member-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0069d9;
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #007bff;
+  }
+  

@@ -1,4 +1,4 @@
-  import React, { useState } from 'react'
+import React, { useState } from 'react'
 import classes from './navbar.module.css'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
@@ -10,6 +10,8 @@ import { logout } from '../../redux/authSlice'
 import { request } from '../../util/fetchAPI'
 import { useEffect } from 'react'
 
+
+// import Listings from './Listings'
 
 const Navbar = () => {
   const [state, setState] = useState({})
@@ -23,7 +25,7 @@ const Navbar = () => {
   const navigate = useNavigate()
   useEffect(() => {
     setState(prev => {
-      return {...prev, location: 'kothrud', type: 'plot'}
+      return {...prev, continent: 'kothrud', type: 'plot'}
     })
   }, [])
 
@@ -109,6 +111,7 @@ const Navbar = () => {
 
 
   return (
+    <>
     <div className={`${classes.container} ${isScrolled && classes.scrolled}`}>
       <div className={classes.wrapper}>
         <Link to='/' onClick={scrollToTop} className={classes.left}>
@@ -119,13 +122,13 @@ const Navbar = () => {
             Home
           </li>
           <li className={classes.listItem}>
-            About Us
+            <Link to='/listings'>List Property</Link>
+          </li>          
+          <li className={classes.listItem}>
+            <Link to='/about'>About Us</Link>
           </li>
           <li className={classes.listItem}>
-            Featured
-          </li>
-          <li className={classes.listItem}>
-            Contact Us
+          <Link to='/contact'>Contact Us</Link>
           </li>
         </ul>
         <div className={classes.right}>
@@ -270,6 +273,8 @@ const Navbar = () => {
         </div>
       )}
     </div>
+    </>
+    
   )
 }
 

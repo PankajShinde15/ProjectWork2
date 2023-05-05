@@ -1,53 +1,59 @@
-import React, { useState } from 'react';
+import React from "react";
+import "./contact.module.css"
 
-function ContactForm() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [mobileNo, setMobileNo] = useState('');
-  const [query, setQuery] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(`Name: ${name}, Email: ${email}, Mobile No: ${mobileNo}, Query: ${query}`);
-    // You can replace console.log with your API call to submit the data
-  }
-
+const Contact = () => {
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        value={name}
-        onChange={(event) => setName(event.target.value)}
-      />
 
-      <label htmlFor="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        value={email}
-        onChange={(event) => setEmail(event.target.value)}
-      />
+    <>
+    
+    <h2 className="common-heading">Feel Free to Contact us</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15126.28620995241!2d73.92422475000001!3d18.59334505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c14df5c70e0d%3A0x2d19689e09e2fced!2sPhoenix%20Mall%20Washrooms!5e0!3m2!1sen!2sin!4v1658905192255!5m2!1sen!2sin"
+      width="100%"
+      height="450"
+      style={{ border: 0 ,marginBottom:80}}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"></iframe>
 
-      <label htmlFor="mobileNo">Mobile No:</label>
-      <input
-        type="tel"
-        id="mobileNo"
-        value={mobileNo}
-        onChange={(event) => setMobileNo(event.target.value)}
-      />
+  <div className="container">
+    <div className="contact-form">
+      <form
+        action="https://formspree.io/f/xwkjyrjb"
+        method="POST"
+        className="contact-inputs">
+        <input
+          type="text"
+          name="username"
+          placeholder="username"
+          autoComplete="off"
+          required
+        />
 
-      <label htmlFor="query">Your Query:</label>
-      <textarea
-        id="query"
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-      />
+        <input
+          type="email"
+          name="Email"
+          placeholder="Email"
+          autoComplete="off"
+          required
+        />
 
-      <button type="submit">Submit</button>
-    </form>
+        <textarea
+          name="message"
+          placeholder="Type your message"
+          cols="30"
+          rows="6"
+          autoComplete="off"
+          required></textarea>
+
+        <input type="submit" value="send" />
+      </form>
+    </div>
+  </div>
+    </>
+      
+
   );
-}
+};
 
-export default ContactForm;
+export default Contact;
