@@ -1,3 +1,4 @@
+//property card
 import React from 'react'
 import classes from './propertyCard.module.css'
 import { FaBed, FaSquareFull } from 'react-icons/fa'

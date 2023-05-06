@@ -32,7 +32,7 @@ propertyController.get('/find', async (req, res) => {
     let properties = []
     try {
         if (type) {
-            properties = await Property.find(type).populate("owner", '-password')
+            properties = await Property.find(type)
         } else {
             properties = await Property.find({})
         }

@@ -1,3 +1,4 @@
+//hero img search
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { AiOutlineSearch } from 'react-icons/ai'

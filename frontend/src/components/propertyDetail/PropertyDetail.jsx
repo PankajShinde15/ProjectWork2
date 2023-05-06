@@ -1,9 +1,9 @@
+//single property in detail
+
 import React from 'react'
 import classes from './propertyDetail.module.css'
 import person from '../../assets/person.jpg'
-import emailjs from '@emailjs/browser'
 import { useSelector } from 'react-redux'
-import { AiOutlineClose } from 'react-icons/ai'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useState } from 'react'
@@ -58,20 +58,6 @@ const PropertyDetail = () => {
     setDesc('')
   }
 
-  // const handleContactOwner = async (e) => {
-  //   e.preventDefault()
-
-  //   emailjs.sendForm("service_mjoebse", "template_w5mthmm", formRef.current, '5T3Wb_hkHjKTOJDYQ')
-  //     .then((result) => {
-  //       handleCloseForm()
-  //       setSuccess(true)
-  //       setTimeout(() => {
-  //         setSuccess(false)
-  //       }, 2500)
-  //     }, (error) => {
-  //       console.log(error.text);
-  //     });
-  // }
 
   const handleDelete = async () => {
     try {
