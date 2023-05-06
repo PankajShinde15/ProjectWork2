@@ -18,8 +18,8 @@ const Properties = () => {
   const query = (useLocation().search).slice(1) // slice(1) to remove "?"
   const arrQuery = query.split("&")
   const navigate = useNavigate()
-
-  // fetch all properties
+//  console.log(useLocation().search.slice(1).split('&'))
+  // // fetch all properties
   useEffect(() => {
     const fetchAllProperties = async() => {
       const data = await request(`/property/getAll`, 'GET')
@@ -28,17 +28,18 @@ const Properties = () => {
     fetchAllProperties()
   }, [])
 
-  // parsing query params
+  // // parsing query params
   useEffect(() => {
     if (arrQuery && allProperties?.length > 0 && state === null) {
       let formattedQuery = {}
       arrQuery.forEach((option, idx) => {
+        
         const key = option.split("=")[0]
         const value = option.split("=")[1]
 
         formattedQuery = { ...formattedQuery, [key]: value }
-
-        // if we are on the last index, assign the formattedQuery obj to state
+        // console.log(formattedQuery);
+  //       // if we are on the last index, assign the formattedQuery obj to state
         if (idx === arrQuery.length - 1) {
           setState(prev => formattedQuery)
           handleSearch(formattedQuery)
@@ -57,7 +58,7 @@ const Properties = () => {
 
   const handleSearch = (param = state) => {
     let options
-    // we either pass the formattedObj or event, that's why we do the IF/ELSE
+  //   // we either pass the formattedObj or event, that's why we do the IF/ELSE
     if (param?.nativeEvent) {
       options = state
     } else {
@@ -69,7 +70,8 @@ const Properties = () => {
       const minPrice = Number(priceRange.split('-')[0])
       const maxPrice = Number(priceRange.split('-')[1])
       const location = continentToIdx(property.location)
-
+      // console.log(property.location)
+      // console.log(property.type === options.type)
       if (
         property.type === options.type
         && location === Number(options.location)
@@ -80,7 +82,6 @@ const Properties = () => {
     })
 
     const queryStr = `type=${options.type}&location=${options.location}&priceRange=${options.priceRange}`
-
     navigate(`/properties?${queryStr}`, { replace: true })
     setFilteredProperties(prev => filteredProperties)
   }
@@ -99,21 +100,20 @@ const Properties = () => {
             <option value="shop">Shop</option>
           </select>
           <select value={state?.priceRange} name="priceRange" onChange={handleState}>
-            <option disabled>Select Price Range</option>
-            <option value="0">0-100,000</option>
+          <option disabled>Select Price Range</option>
             <option value="1">100,000-200,000</option>
             <option value="2">200,000-300,000</option>
             <option value="3">300,000-400,000</option>
             <option value="4">400,000-500,000</option>
           </select>
-          <select value={state?.continent} name="continent" onChange={handleState}>
-            <option disabled>Select Location</option>
+          <select value={state?.location} name="continent" onChange={handleState}>
+          <option disabled>Select location</option>
             <option value="0">Kothrud</option>
             <option value="1">Karvenagar</option>
-            <option value="2">Shivajinagar</option>
+            <option value="2">Katraj</option>
             <option value="3">Kondhwa</option>
-            <option value="4">Katraj</option>
-            <option value="5">Wagholi</option>
+            <option value="4">Wagholi</option>
+            <option value="5">Shivajinagar</option>
           </select>
           <button className={classes.searchBtn}>
             <AiOutlineSearch className={classes.searchIcon} onClick={handleSearch} />

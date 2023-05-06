@@ -8,7 +8,7 @@ export const arrContinent = [
 ]
 
 export const continentToIdx = (continent) => {
-    return arrContinent.findIndex((cont) => cont.toLowerCase() === continent.toLowerCase())
+    return arrContinent.findIndex((cont) => cont === continent)
 }
 
 export const idxToContinent = (idx) => {
