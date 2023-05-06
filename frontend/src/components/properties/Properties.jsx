@@ -106,7 +106,7 @@ const Properties = () => {
             <option value="3">300,000-400,000</option>
             <option value="4">400,000-500,000</option>
           </select>
-          <select value={state?.location} name="continent" onChange={handleState}>
+          <select value={state?.location} name="location" onChange={handleState}>
           <option disabled>Select location</option>
             <option value="0">Kothrud</option>
             <option value="1">Karvenagar</option>
