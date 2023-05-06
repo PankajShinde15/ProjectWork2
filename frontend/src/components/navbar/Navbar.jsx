@@ -251,10 +251,20 @@ const Navbar = () => {
                       <input value={state?.title} type="text" placeholder='Title' name="title" onChange={handleState} />
                       <input value={state?.type} type="text" placeholder='Type' name="type" onChange={handleState} />
                       <input value={state?.desc} type="text" placeholder='Desc' name="desc" onChange={handleState} />
-                      <input value={state?.continent} type="text" placeholder='Continent' name="continent" onChange={handleState} />
+                      <input value={state?.location} type="text" placeholder='location' name="continent" onChange={handleState} />
                       <input value={state?.price} type="number" placeholder='Price' name="price" onChange={handleState} />
                       <input value={state?.sqmeters} type="number" placeholder='Sq. meters' name="sqmeters" onChange={handleState} />
-                      <input value={state?.beds} type="number" placeholder='Beds' name="beds" step={1} min={1} onChange={handleState} />
+                      {state?.type === 'flat' && (
+                        <input
+                          value={state?.beds}
+                          type="number"
+                          placeholder='Beds'
+                          name="beds"
+                          step={1}
+                          min={1}
+                          onChange={handleState}
+                        />
+                      )}
                       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', width: '50%' }}>
                         <label htmlFor='photo'>Property picture <AiOutlineFileImage /></label>
                         <input

@@ -89,25 +89,36 @@ const EditProperty = () => {
                 <h2>Edit Property</h2>
                 <form onSubmit={handleUpdate}>
                     <input value={propertyDetails?.title} type="text" placeholder='Title' name="title" onChange={handleState} />
-                    <select required name='type' onChange={handleState}>
+                    <select value={propertyDetails?.type} required name='type' onChange={handleState}>
                         <option disabled>Select Type</option>
-                        <option value='beach'>Beach</option>
-                        <option value='village'>Village</option>
-                        <option value='mountain'>Mountan</option>
+                        <option value='plot'>Plot</option>
+                        <option value='flat'>Flat</option>
+                        <option value='house'>House</option>
+                        <option value='shop'>Shop</option>
                     </select>
                     <input value={propertyDetails?.desc} type="text" placeholder='Desc' name="desc" onChange={handleState} />
                     <select required name='continent' onChange={handleState}>
-                        <option disabled>Select Continent</option>
-                        <option value='Europe'>Europe</option>
-                        <option value='Asia'>Asia</option>
-                        <option value='South America'>South America</option>
-                        <option value='North America'>North America</option>
-                        <option value='Australia'>Australia</option>
-                        <option value='Africa'>Africa</option>
+                        <option disabled>Select location</option>
+                        <option value='kothrud'>Kothrud</option>
+                        <option value='karvenagar'>Karvenagar</option>
+                        <option value='shivajinagar'>Shivajinagar</option>
+                        <option value='katraj'>Katraj</option>
+                        <option value='kondhwa'>Kondhwa</option>
+                        <option value='wagholi'>Wagholi</option>
                     </select>
                     <input value={propertyDetails?.price} type="number" placeholder='Price' name="price" onChange={handleState} />
                     <input value={propertyDetails?.sqmeters} type="number" placeholder='Sq. meters' name="sqmeters" onChange={handleState} />
-                    <input value={propertyDetails?.beds} type="number" placeholder='Beds' name="beds" step={1} min={1} onChange={handleState} />
+                    {propertyDetails?.type === 'flat' && (
+                    <input
+                        value={propertyDetails?.beds}
+                        type="number"
+                        placeholder='Beds'
+                        name="beds"
+                        step={1}
+                        min={1}
+                        onChange={handleState}
+                        />
+                    )}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px', width: '50%' }}>
                         <label htmlFor='photo'>Property picture <AiOutlineFileImage /></label>
                         <input
