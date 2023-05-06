@@ -4,7 +4,7 @@ import "./contact.module.css"
 const Contact = () => {
   return (
 
-    <>
+    <div>
     
     <h2 className="common-heading">Feel Free to Contact us</h2>
     <iframe
@@ -16,7 +16,7 @@ const Contact = () => {
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"></iframe>
 
-  <div className="container">
+
     <div className="contact-form">
       <form
         action="https://formspree.io/f/xwkjyrjb"
@@ -50,9 +50,7 @@ const Contact = () => {
       </form>
     </div>
   </div>
-    </>
       
-
   );
 };
 

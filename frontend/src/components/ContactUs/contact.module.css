@@ -1,58 +1,49 @@
-.container {
-  display: flex;
-  
-  height: 100vh;
-  background-color: #f2f2f2;
-}
-
 .contact-form {
-  width: 500px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 40px;
-  justify-content: center;
-  align-items: right;
-  
-}
-
-.contact-inputs {
-  display: flex;
-  flex-direction: column;
-}
-
-input[type='text'],
-input[type='email'],
-textarea {
-  padding: 10px;
-  margin-bottom: 20px;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  border: none;
   background-color: #f2f2f2;
-  font-size: 16px;
 }
 
-input[type='submit'] {
+.contact-form form {
+  padding: 20px;
+}
+
+.contact-inputs input,
+.contact-inputs textarea {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+}
+
+.contact-inputs textarea {
+  resize: none;
+}
+
+.contact-inputs input[type="submit"] {
   background-color: #007bff;
   color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
 }
 
-input[type='submit']:hover {
-  background-color: #0069d9;
+.contact-inputs input[type="submit"]:hover {
+  background-color: #0056b3;
 }
 
-input[type='submit']:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #007bff;
-}
-
-textarea:focus,
-input:focus {
+input[type="submit"]:hover,
+input[type="submit"]:focus {
   outline: none;
   box-shadow: 0 0 0 2px #fff, 0 0 0 4px #007bff;
 }
