@@ -1,3 +1,4 @@
+//Contact Page form
 import React from "react";
 import "./contact.module.css"
 
@@ -30,7 +31,7 @@ const Contact = () => {
           required
         />
 
-        <input
+        <input  
           type="email"
           name="Email"
           placeholder="Email"
