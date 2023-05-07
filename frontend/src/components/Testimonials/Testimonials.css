@@ -32,15 +32,13 @@
 }
 
 .testimonials .slick-arrow {
-  /* background-color: lightblue; */
-  border: none;
   border-radius: 50%;
   cursor: pointer;
   height: 40px;
   line-height: 40px;
   position: absolute;
   top: 30%;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
   width: 50px;
   z-index: 0;
 }

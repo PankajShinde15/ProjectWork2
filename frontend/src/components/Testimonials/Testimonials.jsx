@@ -6,7 +6,6 @@ import "./Testimonials.css";
 
 const Testimonials = () => {
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
