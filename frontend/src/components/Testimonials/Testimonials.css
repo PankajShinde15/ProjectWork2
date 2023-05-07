@@ -38,9 +38,9 @@
   line-height: 40px;
   position: absolute;
   top: 30%;
-  /* transform: translateY(-50%); */
+  transform: translateY(-50%);
   width: 50px;
-  z-index: 0;
+  z-index: 1;
 }
 
 .testimonials .slick-arrow:hover {
@@ -49,10 +49,12 @@
 
 .testimonials .slick-prev {
   left: 0;
+  box-shadow: none;
 }
 
 .testimonials .slick-next {
   right: 0;
+  box-shadow: none;
 }
 
 .testimonials .testimonial-item {
@@ -61,11 +63,16 @@
   /* Added height property */
 }
 
+.slick-next:focus {
+  margin: none;
+}
+
 .testimonials .testimonial-text {
   font-size: 18px;
   font-style: italic;
   margin: 20px;
 }
+
 
 .testimonials .testimonial-person {
   font-size: 16px;

@@ -12,7 +12,8 @@ const Testimonials = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000, // Set autoplay speed to 5000ms (5 seconds)
-
+    prevArrow: <button type="button" className="slick-prev"></button>,
+    nextArrow: <button type="button" className="slick-next"></button>
   };
 
   return (
