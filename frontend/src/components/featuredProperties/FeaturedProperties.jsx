@@ -22,7 +22,7 @@ const FeaturedProperties = ({ property }) => {
     const fetchPropertiesNumber = async () => {
       try {
         const data = await request('/property/find/types', 'GET')
-
+        console.log(data.plot);
         setPlotProperties(data.plot)
         setHouseProperties(data.house)
         setFlatProperties(data.flat)

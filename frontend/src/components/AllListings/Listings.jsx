@@ -17,10 +17,7 @@ const Listings = ()=>{
   useEffect(() => {
     const fetchListedProperties = async () => {
         try {
-            const options = {
-                Authorization: `Bearer ${token}`
-            }
-            const data = await request(`/property/find/my-properties`, 'GET', options)
+            const data = await request(`/property/getAll`, 'GET')
             setListedProperties(data)
         } catch (error) {
             console.log(error)

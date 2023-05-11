@@ -13,7 +13,7 @@ const PropertySchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        enum: ["plot", "house", "flats","shop"],
+        enum: ["plot", "house", "flat","shop"],
         required: true
     },
     desc: {
@@ -40,8 +40,9 @@ const PropertySchema = new mongoose.Schema({
     },
     beds: {
         type: Number,
-        required: true,
-        min: 1
+        default: 1,
+        required: false,
+        
     },
     featured: {
         type: Boolean,

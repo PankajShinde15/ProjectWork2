@@ -6,10 +6,7 @@ const propertyController = require('express').Router()
 // get all
 propertyController.get('/getAll', async (req, res) => {
     try {
-        const properties = await Property.find({}).populate("currentOwner", '-password')
-
-        console.log(properties)
-
+        const properties = await Property.find({})
         return res.status(200).json(properties)
     } catch (error) {
         console.error(error)
@@ -19,7 +16,7 @@ propertyController.get('/getAll', async (req, res) => {
 // get featured
 propertyController.get('/find/featured', async (req, res) => {
     try {
-        const featuredProperties = await Property.find({ featured: true }).populate("currentOwner", '-password')
+        const featuredProperties = await Property.find({ featured: true })
         return res.status(200).json(featuredProperties)
     } catch (error) {
         return res.status(500).json(error)

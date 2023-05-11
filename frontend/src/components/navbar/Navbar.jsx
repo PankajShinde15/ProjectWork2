@@ -95,9 +95,9 @@ const Navbar = () => {
         "Authorization": `Bearer ${token}`,
         "Content-Type": 'application/json'
       }
-
+      console.log(options);
       const newProperty = await request("/property", 'POST', options, { ...state, img: filename })
-
+      
       setShowModal(false)
       setShowForm(false)
       navigate(`/propertyDetail/${newProperty._id}`)
@@ -168,7 +168,7 @@ const Navbar = () => {
                  <option value='shop'>Shop</option>
               </select>
               <input value={state?.desc} type="text" placeholder='Desc' name="desc" onChange={handleState} />
-              <select value={state?.location} required name='continent' onChange={handleState}>
+              <select value={state?.location} required name='location' onChange={handleState}>
                  <option disabled>Select location</option>
                  <option value='kothrud'>Kothrud</option>
                  <option value='karvenagar'>Karvenagar</option>
@@ -251,7 +251,7 @@ const Navbar = () => {
                       <input value={state?.title} type="text" placeholder='Title' name="title" onChange={handleState} />
                       <input value={state?.type} type="text" placeholder='Type' name="type" onChange={handleState} />
                       <input value={state?.desc} type="text" placeholder='Desc' name="desc" onChange={handleState} />
-                      <input value={state?.location} type="text" placeholder='location' name="continent" onChange={handleState} />
+                      <input value={state?.location} type="text" placeholder='Location' name="location" onChange={handleState} />
                       <input value={state?.price} type="number" placeholder='Price' name="price" onChange={handleState} />
                       <input value={state?.sqmeters} type="number" placeholder='Sq. meters' name="sqmeters" onChange={handleState} />
                       {state?.type === 'flat' && (
