@@ -11,11 +11,12 @@ import { request } from '../../util/fetchAPI'
 import { FaBed, FaSquareFull } from 'react-icons/fa'
 
 
-const FeaturedProperties = () => {
-  const [Plot, setPlotProperties] = useState(0)
-  const [House, setHouseProperties] = useState(0)
-  const [Flat, setFlatProperties] = useState(0)
-  const [Shop, setShopProperties] = useState(0)
+const FeaturedProperties = ({ property }) => {
+  const [setPlotProperties] = useState(0)
+  const [setHouseProperties] = useState(0)
+  const [setFlatProperties] = useState(0)
+  const [setShopProperties] = useState(0)
+  const ownerProfileImg = property?.currentOwner?.profileImg
 
   useEffect(() => {
     const fetchPropertiesNumber = async () => {
