@@ -14,9 +14,36 @@ propertyController.get('/getAll', async (req, res) => {
 })
 
 // get featured
-propertyController.get('/find/featured', async (req, res) => {
+propertyController.get('/find/featured/flat', async (req, res) => {
     try {
-        const featuredProperties = await Property.find({ featured: true })
+        let featuredProperties = await Property.find({ featured: true, type: "flat" })
+        return res.status(200).json(featuredProperties)
+    } catch (error) {
+        return res.status(500).json(error)
+    }
+})
+
+propertyController.get('/find/featured/plot', async (req, res) => {
+    try {
+        let featuredProperties = await Property.find({ featured: true, type: "plot" })
+        return res.status(200).json(featuredProperties)
+    } catch (error) {
+        return res.status(500).json(error)
+    }
+})
+
+propertyController.get('/find/featured/house', async (req, res) => {
+    try {
+        let featuredProperties = await Property.find({ featured: true, type: "house" })
+        return res.status(200).json(featuredProperties)
+    } catch (error) {
+        return res.status(500).json(error)
+    }
+})
+
+propertyController.get('/find/featured/shop', async (req, res) => {
+    try {
+        let featuredProperties = await Property.find({ featured: true, type: "shop" })
         return res.status(200).json(featuredProperties)
     } catch (error) {
         return res.status(500).json(error)
