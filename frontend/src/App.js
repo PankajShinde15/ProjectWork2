@@ -2,6 +2,7 @@ import Footer from './components/footer/Footer';
 import Hero from './components/hero/Hero';
 import Navbar from './components/navbar/Navbar';
 import Testimonials from './components/Testimonials/Testimonials';
+import WhyChooseUs from './components/whyToChooseUs/whyUs';
 import PopularProperties from './components/popularProperties/PopularProperties';
 import Signin from './components/signin/Signin';
 import Signup from './components/signup/Signup';
@@ -36,6 +37,7 @@ function App() {
             <Navbar />
             <Hero />
             <PopularProperties />
+            <WhyChooseUs />
             <Testimonials />
             <Footer />
           </>

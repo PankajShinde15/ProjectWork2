@@ -1,10 +1,10 @@
 .testimonials {
-  margin: 50px auto;
+  /* margin: 50px auto; */
   margin-bottom: 0;
-  max-width: 70vw;
+  max-width: 100vw;
   position: relative;
   background-color: bisque;
-  max-height: 350px;
+  max-height: 375px;
   /* Added max-height property */
   overflow: hidden;
   /* Added overflow property */
@@ -68,13 +68,13 @@
 }
 
 .testimonials .testimonial-text {
-  font-size: 18px;
+  font-size: 25px;
   font-style: italic;
-  margin: 20px;
+  margin: 20px 150px;
 }
 
 
 .testimonials .testimonial-person {
-  font-size: 16px;
+  font-size: 22px;
   font-weight: bold;
 }
