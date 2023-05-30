@@ -4,6 +4,7 @@
     /* padding-top: 50px; */
     margin-top: 10px;
     background-color: #f7f7f7;
+    padding-bottom: 50px;
 }
 
 .reasonContainer {
@@ -16,18 +17,16 @@
 .why-choose-us h2 {
     text-align: center;
     font-size: 28px;
-    /* margin-bottom: 30px; */
     color: #333;
 }
 
 .feature {
     display: flex;
     width: 50%;
-    padding: 20px;
+    padding: 10px;
     align-items: center;
-    /* justify-content: center; */
     padding-left: 10vw;
-    height: 150px;
+    min-height: 150px;
 }
 
 .feature-icon {
@@ -48,10 +47,19 @@
     color: #333;
     margin-right: 10px
 }
+
 /* 
 .feature p {
     color: #666;
 } */
+
+
+/* RESPONSIVEE */
+@media only screen and (max-width: 950px) {
+    .feature {
+        display: block;
+    }
+}
 
 /* Font Awesome Icons */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
