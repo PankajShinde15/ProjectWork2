@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { request } from '../../util/fetchAPI'
-import classes from './listings.module.css'
+import classes from './plots.module.css'
 import PropertyCard from '../propertyCard/PropertyCard'
 
 const Listings = ()=>{
@@ -13,7 +13,7 @@ const Listings = ()=>{
   useEffect(() => {
     const fetchListedProperties = async () => {
         try {
-            const data = await request(`/property/getAll`, 'GET')
+            const data = await request(`/property/find?type=house`, 'GET')
             setListedProperties(data)
         } catch (error) {
             console.log(error)

@@ -19,7 +19,10 @@ import NotFound from './components/notFound/NotFound';
 import Contact from './components/ContactUs/contactUs';
 import About from './components/AboutUs/About';
 import Listings from './components/AllListings/Listings';
-
+import Plots from './components/types/Plots';
+import Houses from './components/types/Houses';
+import Shops from './components/types/Shops';
+import Flats from './components/types/Flats';
 
 function App() {
   const { user } = useSelector((state) => state.auth)
@@ -51,33 +54,6 @@ function App() {
             <Footer />
           </>
         } />
-        <Route path='/yachts' element={user ?
-          <>
-            <Navbar />
-            <Footer />
-          </>
-          : <Navigate to='/signin' />} />
-        <Route path='/yacht/:id' element={user ?
-          <>
-            <Navbar />
-
-            <Footer />
-          </>
-          : <Navigate to='/signin' />} />
-        <Route path='/create-yacht' element={user ?
-          <>
-            <Navbar />
-
-            <Footer />
-          </>
-          : <Navigate to='/signin' />} />
-        <Route path='/yacht-edit/:id' element={user ?
-          <>
-            <Navbar />
-
-            <Footer />
-          </>
-          : <Navigate to='/signin' />} />
         <Route path='/propertyDetail/:id' element={
           <>
             <Navbar />
@@ -137,6 +113,34 @@ function App() {
           <>
             <Navbar />
             <Listings />
+            <Footer />
+          </>
+        } />
+        <Route path='/plot' element={
+          <>
+            <Navbar />
+            <Plots />
+            <Footer />
+          </>
+        } />
+        <Route path='/flat' element={
+          <>
+            <Navbar />
+            <Flats />
+            <Footer />
+          </>
+        } />
+        <Route path='/house' element={
+          <>
+            <Navbar />
+            <Houses />
+            <Footer />
+          </>
+        } />
+        <Route path='/shop' element={
+          <>
+            <Navbar />
+            <Shops />
             <Footer />
           </>
         } />
